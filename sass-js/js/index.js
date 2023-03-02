@@ -1,31 +1,31 @@
 const userPassword = 1234;
 let userBalance = 1000;
-let secim;
-let cixarishMeblegi;
-let depositMeblegi;
+let choose;
+let withdrawalAmount;
+let depositAmount;
 alert("Salam Hormetli Mushteri!");
 
+const userName = prompt("Zehmet Olmasa Adinizi Daxil Edin:");
+const userSureName = prompt("Zehmet Olmasa Soyadinizi Daxil Edin:");
+let inputPassword = Number(prompt("Zehmet Olmasa Shifreni Daxil Edin:"));
 
 
 do {
-    const userName = prompt("Zehmet Olmasa Adinizi Daxil Edin:");
-    const userSureName = prompt("Zehmet Olmasa Soyadinizi Daxil Edin:");
-    let inputPassword = Number(prompt("Zehmet Olmasa Shifreni Daxil Edin:"));
 
     if (userName.length >= 3 && userSureName.length > 5 && inputPassword === userPassword) {
 
         alert("Hormetli! " + userName + " " + userSureName + " Zehmet olmasa bir emeliyyat secin!");
-        secim = Number(prompt("Balansi gormek ucun: 1  Cixarish ucun: 2  Balansi artirmaq ucun: 3  Chixis ucun: 0 "));
+        choose = Number(prompt("Balansi gormek ucun: 1  Cixarish ucun: 2  Balansi artirmaq ucun: 3  Chixis ucun: 0 "));
 
-        switch (secim) {
+        switch (choose) {
             case 1:
                 alert("Balansiniz:" + userBalance + " Azn");
                 break;
             case 2:
-                cixarishMeblegi = Number(prompt("Cixarmaq Istediyiniz Meblegi Daxil Edin:"));
-                if (cixarishMeblegi <= userBalance) {
+                withdrawalAmount = Number(prompt("Cixarmaq Istediyiniz Meblegi Daxil Edin:"));
+                if (withdrawalAmount <= userBalance) {
 
-                    alert("Cixarish ugurla basha catdi" + " Balansda qalan vesait " + withdrawal(userBalance, cixarishMeblegi) + " Azn")
+                    alert("Cixarish ugurla basha catdi" + " Balansda qalan vesait " + withdrawal(userBalance, withdrawalAmount) + " Azn")
                 }
                 else {
                     alert("Balansda Kifayet Qeder Vesait Yoxdur")
@@ -33,8 +33,8 @@ do {
                 break;
 
             case 3:
-                depositMeblegi = Number(prompt("Depozit Etdiyiniz Meblegi Daxil Edin:"))
-                alert("Balans Ugurla Artirildi! " + "Balans: " + deposit(userBalance, depositMeblegi) + " Azn")
+                depositAmount = Number(prompt("Depozit Etdiyiniz Meblegi Daxil Edin:"))
+                alert("Balans Ugurla Artirildi! " + "Balans: " + deposit(userBalance, depositAmount) + " Azn")
                 break;
 
             case 0:
@@ -51,7 +51,7 @@ do {
 
 
 }
-while (secim !== 0);
+while (choose !== 0);
 
 
 
